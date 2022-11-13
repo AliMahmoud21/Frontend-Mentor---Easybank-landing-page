@@ -1,0 +1,304 @@
+@use 'global' as*;
+@use 'variables' as*;
+@use 'mixins' as*;
+@use 'media-queries' as*;
+
+// #2dc1a9
+
+// Start Styling Header Section
+.header {
+    position: absolute;
+    width: 100%;
+    background-color: $veryLightGray;
+    height: 80px;
+    z-index: 10;
+    .container {
+        padding: 2rem;
+        @include grid-3columns;
+        a {
+            img {
+                max-width: 100%;
+            }
+        }
+        .menu {
+            ul {
+                list-style: none;
+                display: flex;
+                li {
+                    margin-right: $font-lg;
+                    a {
+                        position: relative;
+                            text-decoration: none;
+                            color: $grayishBlue;
+                            transition: $transition-2;
+                            &::before {
+                                content: "";
+                                display: block;
+                                position: absolute;
+                                height: 0.3125rem;
+                                left: 0;
+                                right: 0;
+                                bottom: -30px;
+                                background: linear-gradient(to right, $limeGreen, $brightCyan);
+                                transition: $transition-2;
+                                opacity: 0;
+                            }
+                            &:hover {
+                                color: $darkBlue;
+                                &::before {
+                                    opacity: 1;
+                                }
+                            }
+                    }
+                }
+            }
+        }
+        .invite-btn {
+            .btn {
+                color: #fff;
+                background: linear-gradient(to right, $limeGreen, $brightCyan);
+                font-size: calc($font-sm + 0.125rem);
+                border-radius: 1.5625rem;
+                transition: $transition-2;
+                text-align: center;
+                border: none;
+                outline: none;
+                margin: -0.625rem 0 0 7rem;
+                padding: .6rem calc($font-lg + 0.3125rem);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// Start Styling Landing Section
+.landing {
+    overflow: hidden;
+    padding: 80px 0;
+    .container {
+        position: relative;
+        .content {
+            @include flex-between;
+            margin: {
+                top: -15%;
+                left: 45%;
+            }
+                .text {
+                    margin: 30px 0;
+                    position: absolute;
+                    left: 2%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    h2 {
+                        color: $darkBlue;
+                        font: {
+                            size: 60px;
+                            weight: 400;
+                        }
+                        text-transform: none;
+                        line-height: 1.1;
+                        margin-bottom: 25px;
+                    }
+                    p {
+                        color: $grayishBlue;
+                        line-height: 1.4;
+                        font-size: $font-sm;
+                        margin-bottom: 40px;
+                    }
+                    .btn {
+                        color: #fff;
+                        background: linear-gradient(to right, $limeGreen, $brightCyan);
+                        font-size: calc($font-sm + 0.125rem);
+                        border-radius: $font-lg;
+                        transition: $transition-2;
+                        text-align: center;
+                        border: none;
+                        outline: none;
+                        padding: .6rem calc($font-lg + 0.3125rem);
+                        cursor: pointer;
+                    }
+                }
+            }
+            img.two {
+                position: absolute;
+                right: -14%;
+                top: 50%;
+                transform: translateY(-50%);
+                margin-top: 70px;
+                overflow: hidden;
+            }
+            }
+    }
+
+// Start Styling Features Section
+.features {
+    margin-top: -140px;
+    padding: 80px 0;
+    background-color: $lightGrayishBlue;
+    .container {
+        .text {
+            h2 {
+                color: $darkBlue;
+                font: {
+                    size: 2.25rem;
+                    weight: 300;
+                }
+                margin-bottom: 20px;
+            }
+            p {
+                color: $grayishBlue;
+                line-height: 1.6;
+                font-size: 1rem;
+            }
+        }
+        .grid-box {
+            padding: 60px 0;
+            @include grid-4columns;
+            .box {
+                h2 {
+                    color: $darkBlue;
+                    padding: 30px 0;
+                    font: {
+                        size: 1.4rem;
+                        weight: 400;
+                    }
+                }
+                p {
+                    color: $grayishBlue;
+                    font-size: $font-sm;
+                    line-height: 1.6;
+                }
+            }
+        }
+    }
+}
+
+// Start Styling Articles Section
+.articles {
+    padding: 80px;
+    .container {
+        h2 {
+            color: $darkBlue;
+                font: {
+                    size: 2.25rem;
+                    weight: 300;
+                }
+                margin-bottom: 20px;
+        }
+        .art-box {
+            padding: 50px 0;
+            @include grid-4columns;
+            .card {
+                img {
+                    height: 180px;
+                    border-top-right-radius: 5px;
+                    border-top-left-radius: 5px;
+                    margin-bottom: 30px;
+                }
+                .text-container {
+                    padding: 0 15px;
+                    span {
+                        color: $grayishBlue;
+                        font-size: $font-sm;
+                    }
+                    h2 {
+                        color: $darkBlue;
+                        transition: $transition-2;
+                        cursor: pointer;
+                        margin: {
+                            top: 20px;
+                            bottom: 10px;
+                        }
+                        line-height: 1.2;
+                        font: {
+                            size: 1.125rem;
+                            weight: 400;
+                        }
+                        &:hover {
+                            color: $limeGreenDark;
+                        }
+                    }
+                    p {
+                        color: $grayishBlue;
+                        font-size: $font-sm;
+                        line-height: 1.6;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Start Styling Footer Section
+.footer {
+    padding: 60px 0;
+    background-color: $darkBlue;
+    .container {
+        .boxes {
+            @include grid-3columns;
+            .col-1 {
+                img {
+                    color: $white;
+                    max-width: 100%;
+                    margin-bottom: 30px;
+                }
+                .icons {
+                    i {
+                        color: $white;
+                        padding-left: 8px;
+                        font-size: $font-lg;
+                        transition: $transition-2;
+                        cursor: pointer;
+                        &:hover {
+                            color: $limeGreenDark;
+                        }
+                    }
+                }
+            }
+            .col-2 {
+                @include grid-2columns;
+                .col {
+                    margin-top: -20px;
+                    display: flex;
+                    flex-direction: column;
+                    a {
+                        color: $white;
+                        font-size: $font-med;
+                        text-decoration: none;
+                        margin-top: 20px;
+                        transition: $transition-2;
+                        &:hover {
+                            color: $limeGreenDark
+                        }
+                    }
+                }
+            }
+            .col-3 {
+                display: flex;
+                flex-direction: column;
+                margin-left: 120px;
+                .btn {
+                        color: #fff;
+                        background: linear-gradient(to right, $limeGreen, $brightCyan);
+                        font-size: calc($font-sm + 0.125rem);
+                        border-radius: 1.5625rem;
+                        margin: {
+                            bottom: 20px;
+                            left: 50px;
+                        }
+                        transition: $transition-2;
+                        text-align: center;
+                        border: none;
+                        outline: none;
+                        width: fit-content;
+                        padding: .8rem calc($font-lg + 0.7125rem);
+                        cursor: pointer;
+                }
+                span {
+                        color: $grayishBlue;
+                        font-size: $font-sm;
+                }
+            }
+        }
+    }
+}
